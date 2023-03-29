@@ -18,7 +18,7 @@ public class Main {
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
                     String tit;
                     String aut;
-                    int dur;
+                    //int dur;
                     String dir;
                     String fecEst;
                     String idi;
@@ -27,14 +27,14 @@ public class Main {
                     System.out.println("Titulo");
                     tit = input.nextLine();
                     t.setTitulo(tit);
-                    System.out.println("Autor");
+                  /*  System.out.println("Autor");
                     aut = input.nextLine();
                     t.setAutor(aut);
                     System.out.println("Director");
                     dir = input.nextLine();
                     t.setDirector(dir);
                     System.out.println("Duracion");
-                    dur = input.nextInt();
+                   // dur = input.nextInt();
                     t.setDuracion();
                     System.out.println("Fecha de Estreno");
                     fecEst = input.nextLine();
@@ -51,7 +51,7 @@ public class Main {
                     System.out.println("Actores");
                     t.setActores();
                     System.out.println("Interpretes");
-                    t.setInterpretes();
+                    t.setInterpretes();*/
                     fav.agregarFaborito(t);
                     break;
                 }

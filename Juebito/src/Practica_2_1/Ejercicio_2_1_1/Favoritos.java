@@ -21,7 +21,8 @@ public class Favoritos {
     }
     public void listarFavorito(){
         for (ContenidoAudioVisual contenidoAudioVisual : vec) {
-            System.out.println(contenidoAudioVisual.getTitulo());
+            System.out.println(contenidoAudioVisual);
+          /* System.out.println(contenidoAudioVisual.getTitulo());
             System.out.println(contenidoAudioVisual.getAutor());
             System.out.println(contenidoAudioVisual.getDirector());
             System.out.println(contenidoAudioVisual.getGenero());
@@ -34,7 +35,7 @@ public class Favoritos {
             }
             for(int i=0;i<contenidoAudioVisual.getInterpretes().size();i++){
                 System.out.println(contenidoAudioVisual.getInterpretes().get(i));
-            }
+            }*/
 
         }
     }

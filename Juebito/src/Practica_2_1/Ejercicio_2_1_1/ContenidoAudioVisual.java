@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream:Juebito/src/Practica_2_1/Ejercicio_2_1_1/ContenidoAudioVisual.java
 package Practica_2_1.Ejercicio_2_1_1;
 import java.sql.Time;
 import java.util.Date;
+=======
+package Practica_2_1;
+import java.util.GregorianCalendar;
+>>>>>>> Stashed changes:Juebito/src/Practica_2_1/ContenidoAudioVisual.java
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,16 +13,23 @@ public class ContenidoAudioVisual {
     private Scanner input = new Scanner(System.in);
     private String titulo;
     private String autor;
-    private Time duracion;
+    private GregorianCalendar duracion;
     private String director;
     private List<String> interpretes;
     private List<String> actores;
-    private Date fechaEstreno;
+    private GregorianCalendar fechaEstreno;
     private String genero;
     private String idiomaOriginal;
     private String subtitulos;
 
 
+    public Scanner getInput() {
+        return this.input;
+    }
+
+    public void setInput(Scanner input) {
+        this.input = input;
+    }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -32,11 +44,11 @@ public class ContenidoAudioVisual {
         this.autor = autor;
     }
 
-    public Time getDuracion() {
+    public GregorianCalendar getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(Time duracion) {
+    public void setDuracion(GregorianCalendar duracion) {
         this.duracion = duracion;
     }
 
@@ -76,11 +88,11 @@ public class ContenidoAudioVisual {
         }while (aca.matches("FIN"));
     }
 
-    public Date getFechaEstreno() {
+    public GregorianCalendar getFechaEstreno() {
         return fechaEstreno;
     }
 
-    public void setFechaEstreno(Date fechaEstreno) {
+    public void setFechaEstreno(GregorianCalendar fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
     }
 
@@ -107,4 +119,10 @@ public class ContenidoAudioVisual {
     public void setSubtitulos(String subtitulos) {
         this.subtitulos = subtitulos;
     }
+
+    @Override
+    public String toString() {
+        return  "Titulo: " + this.titulo;
+    }
+
 }
