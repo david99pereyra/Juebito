@@ -1,9 +1,7 @@
 package Practica_2_1;
 import java.sql.Time;
-
-
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Main_v2{
@@ -11,6 +9,7 @@ public class Main_v2{
         Scanner input = new Scanner(System.in);
         int eleccion;
         Catalogo cat = new Catalogo();
+        GregorianCalendar cla = new GregorianCalendar();
         do{
             System.out.println("Bienvenido Usuario, a su lista de favoritos");
             System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 4) Salir");
@@ -24,7 +23,7 @@ public class Main_v2{
                     String aut;
                     String dur;
                     String dir;
-                    String fecEst;
+                    int fecEst;
                     String idi;
                     String cc;
                     String gen;
@@ -41,8 +40,13 @@ public class Main_v2{
                     dur = input.nextLine();
                     t.setDuracion(Time.valueOf(dur));
                     System.out.println("Fecha de Estreno");
-                    fecEst = input.nextLine();
-                    t.setFechaEstreno(Date.valueOf(fecEst));
+                    fecEst = input.nextInt();
+                    cla.set(Calendar.DAY_OF_MONTH, fecEst);
+                    fecEst = input.nextInt();
+                    cla.set(Calendar.MONTH, fecEst);
+                    fecEst = input.nextInt();
+                    cla.set(Calendar.YEAR, fecEst);
+                    input.nextLine();
                     System.out.println("Idioma");
                     idi = input.nextLine();
                     t.setIdiomaOriginal(idi);
@@ -53,22 +57,24 @@ public class Main_v2{
                     gen = input.nextLine();
                     t.setGenero(gen);
                     System.out.println("Actores");
-                    t.setActores();
+//                    t.setActores();
                     System.out.println("Interpretes");
-                    t.setInterpretes();
+//                    t.setInterpretes();
                     cat.addContenido(t);
                 }
                 case 2 -> {
-                    int numero=0;
+                    int numero=1;
                     cat.deleteContenido(numero);
                 }
                 case 3 -> {
                     System.out.println("Sus favoritos son:");
                     cat.showContenido();
                 }
+                case 4 ->{
+                }
                 default -> System.out.println("Opcion incorrecta");
             }
-        }while (eleccion != 4);
+        }while (eleccion != 5);
         System.out.println("Adios!!");
     }
 }
