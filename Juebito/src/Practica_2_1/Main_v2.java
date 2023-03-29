@@ -21,45 +21,54 @@ public class Main_v2{
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
                     String tit;
                     String aut;
-                    String dur;
+                    int dur;
                     String dir;
-                    int fecEst;
+                    int fecEstAnio, fecEstMes, fecEstdia;
                     String idi;
                     String cc;
                     String gen;
+
                     System.out.println("Titulo");
                     tit = input.nextLine();
                     t.setTitulo(tit);
+
                     System.out.println("Autor");
                     aut = input.nextLine();
                     t.setAutor(aut);
+
                     System.out.println("Director");
                     dir = input.nextLine();
                     t.setDirector(dir);
+
                     System.out.println("Duracion");
-                    dur = input.nextLine();
-                    t.setDuracion(Time.valueOf(dur));
+                    dur = input.nextInt();
+                    //cla.s
+
                     System.out.println("Fecha de Estreno");
-                    fecEst = input.nextInt();
-                    cla.set(Calendar.DAY_OF_MONTH, fecEst);
-                    fecEst = input.nextInt();
-                    cla.set(Calendar.MONTH, fecEst);
-                    fecEst = input.nextInt();
-                    cla.set(Calendar.YEAR, fecEst);
+                    fecEstAnio = input.nextInt();
+                    fecEstMes = input.nextInt();
+                    fecEstdia = input.nextInt();
+                    //t.setFechaEstreno(cla.set(fecEstAnio, fecEstMes, fecEstdia));
                     input.nextLine();
+
                     System.out.println("Idioma");
                     idi = input.nextLine();
                     t.setIdiomaOriginal(idi);
+
                     System.out.println("Subtitulos");
                     cc = input.nextLine();
                     t.setSubtitulos(cc);
+
                     System.out.println("Genero");
                     gen = input.nextLine();
                     t.setGenero(gen);
+
                     System.out.println("Actores");
 //                    t.setActores();
+
                     System.out.println("Interpretes");
 //                    t.setInterpretes();
+
                     cat.addContenido(t);
                 }
                 case 2 -> {

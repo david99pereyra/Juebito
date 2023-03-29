@@ -1,6 +1,5 @@
 package Practica_2_1;
 
-import java.util.Date;
 import java.util.Hashtable;
 import java.util.GregorianCalendar;
 
