@@ -1,6 +1,5 @@
 package Practica_2_1;
-import java.sql.Time;
-import java.sql.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Main {
@@ -14,12 +13,12 @@ public class Main {
             eleccion = input.nextInt();
 
             switch (eleccion) {
-                case 1 -> {
+                case 1:{
                     input.nextLine();
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
                     String tit;
                     String aut;
-                    String dur;
+                    int dur;
                     String dir;
                     String fecEst;
                     String idi;
@@ -35,8 +34,8 @@ public class Main {
                     dir = input.nextLine();
                     t.setDirector(dir);
                     System.out.println("Duracion");
-                    dur = input.nextLine();
-                    t.setDuracion(Time.valueOf(dur));
+                    dur = input.nextInt();
+                    t.setDuracion();
                     System.out.println("Fecha de Estreno");
                     fecEst = input.nextLine();
                     t.setFechaEstreno(Date.valueOf(fecEst));
@@ -54,18 +53,21 @@ public class Main {
                     System.out.println("Interpretes");
                     t.setInterpretes();
                     fav.agregarFaborito(t);
+                    break;
                 }
-                case 2 -> {
+                case 2: {
                     String tituto;
                     System.out.println("Ingrese el nombre de la Serie o Pelicula a borrar");
                     tituto = input.nextLine();
                     fav.eliminarFavorito(tituto);
+                    break;
                 }
-                case 3 -> {
+                case 3: {
                     System.out.println("Sus favoritos son:");
                     fav.listarFavorito();
+                    break;
                 }
-                default -> System.out.println("Opcion incorrecta");
+                default: System.out.println("Opcion incorrecta");break;
             }
         }while (eleccion != 4);
         System.out.println("Adios!!");
